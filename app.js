@@ -14,7 +14,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('hogan-express'));
 app.set('view engine', 'html');
-app.set('layout', 'layout');
+app.set('layout', 'views/layout/');
 app.set('partials', {head: "head"});
 
 app.use(favicon());
