@@ -19,6 +19,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(require('node-compass')({mode: 'expanded'}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
@@ -55,8 +56,5 @@ app.use(function(err, req, res, next) {
     });
 });
 
-var port = 4444 || process.env.port;
-app.listen(port);
-console.log("listening on " + port);
 
 module.exports = app;
