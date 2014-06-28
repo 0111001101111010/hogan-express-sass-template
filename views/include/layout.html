@@ -4,3 +4,19 @@
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+<body>
+
+    <p>-----[ > head ]-----</p>
+
+    {{> head}}
+
+    <p>-----[ { yield } ]-----</p>
+
+    {{{ yield }}}
+
+    <p>-----[ { yield-footer } ]-----</p>
+
+    {{{ yield-footer }}}
+
+</body>
+</html>
