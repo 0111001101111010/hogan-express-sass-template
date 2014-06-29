@@ -18,10 +18,13 @@ var app = express();
 
 app.engine('html', require('hogan-express'));
 app.set('view options', {layout: true});
+//call from layout
 app.set('layout', 'include/layout');
+
+//callable from anywhere
 app.set('partials', {
-  head: "include/head",
-  temp: "include/temp"
+  head: "partial/head",
+  temp: "partial/temp"
 });
 app.set('views',  __dirname + '/views');
 app.set('view engine', 'html');
