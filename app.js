@@ -14,14 +14,12 @@ var app = express();
 // Set View Engine
 // By default, Express will use a generic HTML wrapper (a layout) to render all your pages. If you don't need that, turn it off.
 // Set the layout page. Layout page needs {{{ yield }}}  where page content will be injected
-
+//set layout
+//set partials
 
 app.engine('html', require('hogan-express'));
 app.set('view options', {layout: true});
-//call from layout
 app.set('layout', 'include/layout');
-
-//callable from anywhere
 app.set('partials', {
   head: "partial/head",
   temp: "partial/temp"
