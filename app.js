@@ -11,11 +11,21 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+// Set View Engine
+// By default, Express will use a generic HTML wrapper (a layout) to render all your pages. If you don't need that, turn it off.
+// Set the layout page. Layout page needs {{{ yield }}}  where page content will be injected
+
+
 app.engine('html', require('hogan-express'));
+app.set('view options', {layout: true});
+app.set('layout', 'include/layout');
+app.set('partials', {
+  head: "include/head",
+  temp: "include/temp"
+});
+app.set('views',  __dirname + '/views');
 app.set('view engine', 'html');
-app.set('layout', 'views/layout/');
-app.set('partials', {head: "head"});
+//app.enable('view cache');
 
 app.use(favicon());
 app.use(logger('dev'));
