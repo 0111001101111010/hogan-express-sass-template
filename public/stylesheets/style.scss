@@ -10,10 +10,13 @@ a {
 }
 /***Using Sass***/
 p {
-  $width: 100px;
-  $height: 200px;
+  $width: 400px;
+  $height: 100px;
   width: $width/2;            // Uses a variable, does division
-  width: round(1.5)/2;        // Uses a function, does division
   height: ($height/2);          // Uses parentheses, does division
   margin-left: 5px + 8px/2px; // Uses +, does division
+}
+
+#content {
+  border: solid;
 }
